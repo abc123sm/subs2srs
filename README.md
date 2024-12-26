@@ -1,5 +1,6 @@
 # subs2srs
-这是一个基于字幕时间轴处理视频或音频，生成srs软件学习资料的工具，原始代码在这[subs2srs](https://subs2srs.sourceforge.net/)，我自己改了改，代码就不开源了，主要我代码写得有点丑，不好意思发，大概说下与原版的不同之处
+这是一个基于字幕时间轴处理视频或音频，生成srs软件学习资料的工具，原始代码在这[subs2srs](https://subs2srs.sourceforge.net/)，我自己改了改，代码就不开源了，主要我代码写得有点丑，不好意思发，大概说下与原版的不同之处  
+如果说违反开源协议，必须要弄代码出来的话我再研究研究怎么发，总之请在issues还是啥的告诉我，我是直接在vb那玩意里面写的，代码里面一堆注释（写了第1 2 3 4 5版代码之类的，懒得弄版本管理全扔注释里面了……）
 
 # 与原版（*29.7版*）的区别
 ## 导出速度
@@ -25,6 +26,7 @@
 参考 随便写的一些东西 https://t.me/Subs2srs
 
 # 原版的一些介绍
+```
 subs2srs Release Notes
 --------------------------------------------------------------------------------
 
@@ -71,3 +73,4 @@ Subtitle Creator - Original VOBSUB code
 TagLib#          - MP3 tagging library
 mp3gain          - Used to normalize MP3 files
 mkvtoolnix       - Used to extract tracks from .mkv files
+```
