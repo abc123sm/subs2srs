@@ -34,19 +34,23 @@ namespace subs2srs
                 totalLines, lastTime, Settings.Instance.VideoClips.Size.Width, Settings.Instance.VideoClips.Size.Height);
 
             DialogProgress.updateProgressInvoke(dialogProgress, 0, "Initializing parallel processing...");
+            int ddd123 = Math.Max(Environment.ProcessorCount / ConstantSettings.Defaultabc123smaudiocpu, 1);
+            Console.WriteLine($"音频核心: {ddd123}");
 
- 
+
+
             try
             {
                 // 第一级并行：按剧集处理
                 Parallel.ForEach(workerVars.CombinedAll, new ParallelOptions
                 {
-                    MaxDegreeOfParallelism = Environment.ProcessorCount
+                    //MaxDegreeOfParallelism = Environment.ProcessorCount 所有线程核
+                    MaxDegreeOfParallelism = Math.Max(Environment.ProcessorCount / ConstantSettings.Defaultabc123smaudiocpu, 1)
                 }, (combArray, state, episodeIndex) =>
                 {
                     int episodeCount = (int)episodeIndex + 1;
                     int episodeNumber = episodeCount + Settings.Instance.EpisodeStartNumber - 1;
-
+                    
                     if (combArray.Count == 0) return;
 
                     string tempMp3Filename = Path.Combine(
@@ -112,10 +116,8 @@ namespace subs2srs
 
             if (Settings.Instance.AudioClips.PadEnabled)
             {
-                filenameStartTime = UtilsSubs.applyTimePad(comb.Subs1.StartTime,
-                    -Settings.Instance.AudioClips.PadStart);
-                filenameEndTime = UtilsSubs.applyTimePad(comb.Subs1.EndTime,
-                    Settings.Instance.AudioClips.PadEnd);
+                filenameStartTime = UtilsSubs.applyTimePad(filenameStartTime, -Settings.Instance.AudioClips.PadStart);
+                filenameEndTime = UtilsSubs.applyTimePad(filenameEndTime, Settings.Instance.AudioClips.PadEnd);
             }
 
             return name.createName(

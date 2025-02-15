@@ -20,8 +20,15 @@ namespace subs2srs
             int progessCount = 0;
             object progressLock = new object();
 
+            int ddd223 = Math.Max(Environment.ProcessorCount / ConstantSettings.Defaultabc123smsnapcpu, 1);
+            Console.WriteLine($"截图核心: {ddd223}");
+
             // Process episodes in parallel
-            Parallel.For(0, totalEpisodes, (episodeIndex, state) =>
+            Parallel.For(0, totalEpisodes, new ParallelOptions
+            {
+                //MaxDegreeOfParallelism = Environment.ProcessorCount 所有线程核
+                MaxDegreeOfParallelism = Math.Max(Environment.ProcessorCount / ConstantSettings.Defaultabc123smsnapcpu, 1)
+            }, (episodeIndex, state) =>
             {
                 List<InfoCombined> combArray = workerVars.CombinedAll[episodeIndex];
                 string videoFileName = Settings.Instance.VideoClips.Files[episodeIndex];
