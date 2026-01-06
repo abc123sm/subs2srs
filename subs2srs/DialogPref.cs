@@ -660,6 +660,12 @@ namespace subs2srs
         PrefDefaults.Defaultabc123smsnapcpu));
       propTable["截图线程数"] = ConstantSettings.Defaultabc123smsnapcpu;
       
+      // abc123sm 音频声道数
+      propTable.Properties.Add(new PropertySpec("音频声道数", typeof(int),
+        "ABC123SM (Uses Tokens)",
+        "设定音频时使用的声道数量，1或2都行\n",
+        PrefDefaults.Defaultabc123smAudioAC));
+      propTable["音频声道数"] = ConstantSettings.Defaultabc123smAudioAC;
       
       // reencode_before_splitting_audio
       propTable.Properties.Add(new PropertySpec("Re-encode Before Splitting Audio", typeof(bool),
@@ -970,6 +976,7 @@ namespace subs2srs
               UtilsCommon.checkRange((int)propTable["Long Clip Warning"], 0, 99999, PrefDefaults.LongClipWarningSeconds).ToString()));
       pairList.Add(new PrefIO.SettingsPair("ABC123SM_audio_cpu", UtilsCommon.checkRange((int)propTable["音频线程数"], 0, 99999, PrefDefaults.Defaultabc123smaudiocpu).ToString()));
       pairList.Add(new PrefIO.SettingsPair("ABC123SM_snap_cpu", UtilsCommon.checkRange((int)propTable["截图线程数"], 0, 99999, PrefDefaults.Defaultabc123smsnapcpu).ToString()));
+      pairList.Add(new PrefIO.SettingsPair("ABC123SM_audio_ac", UtilsCommon.checkRange((int)propTable["音频声道数"], 0, 99999, PrefDefaults.Defaultabc123smAudioAC).ToString()));
 
       // Write the settings to file
       PrefIO.writeString(pairList);

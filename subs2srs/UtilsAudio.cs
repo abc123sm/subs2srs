@@ -43,11 +43,12 @@ namespace subs2srs
             string timeArg = UtilsVideo.formatStartTimeAndDurationArg(startTime, endTime);
 
             string ffmpegAudioProgArgs = "";
+            int audioac = ConstantSettings.Defaultabc123smAudioAC;
 
             // Example format: 
             // -vn -y -i "G:\Temp\inputs.mkv" -ac 2 -map 0:1 -ss 00:03:32.420 -t 00:02:03.650 -b:a 128k -threads 0 "output.mp3" 
-            ffmpegAudioProgArgs = String.Format("-vn -y -i \"{0}\" -ac 2 {1} {2} {3} -application voip \"{4}\"",//ffmpegAudioProgArgs = String.Format("-vn -y -i \"{0}\" -ac 2 {1} {2} {3}  \"{4}\"",
-                                                                                                                                      // Video file
+            ffmpegAudioProgArgs = String.Format("-vn -y -i \"{0}\" -ac {5} {1} {2} {3} -application audio \"{4}\"",//ffmpegAudioProgArgs = String.Format("-vn -y -i \"{0}\" -ac 2 {1} {2} {3}  \"{4}\"",
+                                                                                                                  // Video file
                                                 inFile,              // {0}
 
                                                 // Mapping
@@ -60,7 +61,9 @@ namespace subs2srs
                                                 audioBitrateArg,     // {3}
 
                                                 // Output file name 
-                                                outFile);            // {4}
+                                                outFile,            // {4}
+                                                
+                                                audioac);            // {5}
 
             if (dialogProgress == null)
             {

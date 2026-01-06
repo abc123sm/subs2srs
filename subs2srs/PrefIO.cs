@@ -332,6 +332,7 @@ namespace subs2srs
 
       ConstantSettings.Defaultabc123smaudiocpu = getInt("ABC123SM_audio_cpu", PrefDefaults.Defaultabc123smaudiocpu);
       ConstantSettings.Defaultabc123smsnapcpu = getInt("ABC123SM_snap_cpu", PrefDefaults.Defaultabc123smsnapcpu);
+      ConstantSettings.Defaultabc123smAudioAC = getInt("ABC123SM_audio_ac", PrefDefaults.Defaultabc123smAudioAC);
 
 
       }

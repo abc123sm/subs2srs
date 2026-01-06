@@ -114,6 +114,7 @@ namespace subs2srs
     public const string DuelingQuickRefSubs2Format = "[${0:s_total_hour}:${0:s_min}:${0:s_sec}.${0:s_hsec}]  ${subs2_line}\n";
     public const int Defaultabc123smaudiocpu = 5;
     public const int Defaultabc123smsnapcpu = 5;
+    public const int Defaultabc123smAudioAC = 2;
     }
 
 
@@ -158,7 +159,7 @@ namespace subs2srs
     private static string pathMkvExtractExeRel = pathMkvDirRel + "mkvextract.exe";
     private static string pathMkvExtractExeFull = pathMkvDirFull + "mkvextract.exe";
 
-
+    public static int defaultabc123smAudioAC = PrefDefaults.Defaultabc123smAudioAC;
     public static int defaultabc123smaudiocpu = PrefDefaults.Defaultabc123smaudiocpu;
     public static int defaultabc123smsnapcpu = PrefDefaults.Defaultabc123smsnapcpu;
 
@@ -858,6 +859,11 @@ namespace subs2srs
       set { duelingQuickRefSubs2Format = value; }
     }
 
+    public static int Defaultabc123smAudioAC
+    {
+        get { return defaultabc123smAudioAC; }
+        set { defaultabc123smAudioAC = value; }
+    }
 
     public static int Defaultabc123smaudiocpu
     {
