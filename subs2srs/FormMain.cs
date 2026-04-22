@@ -1,4 +1,4 @@
-﻿//  Copyright (C) 2009-2016 Christopher Brochtrup
+//  Copyright (C) 2009-2016 Christopher Brochtrup
 //
 //  This file is part of subs2srs.
 //
@@ -894,6 +894,7 @@ namespace subs2srs
         Settings.Instance.AudioClips.PadStart = (int)numericUpDownAudioPadStart.Value;
         Settings.Instance.AudioClips.PadEnd = (int)numericUpDownAudioPadEnd.Value;
         Settings.Instance.AudioClips.Normalize = checkBoxNormalizeAudio.Checked;
+        ConstantSettings.Defaultabc123smAudioAC = checkBoxMonoAudio.Checked ? 1 : 2;
         Settings.Instance.VideoClips.IPodSupport = checkBoxIPod.Checked;
 
         Settings.Instance.AudioClips.filePattern = textBoxAudioFile.Text.Trim();
@@ -999,6 +1000,7 @@ namespace subs2srs
       comboBoxAudioClipBitrate.Text = Settings.Instance.AudioClips.Bitrate.ToString();
       radioButtonExtractAudioFromVideo.Checked = Settings.Instance.AudioClips.UseAudioFromVideo;
       checkBoxNormalizeAudio.Checked = Settings.Instance.AudioClips.Normalize;
+      checkBoxMonoAudio.Checked = ConstantSettings.Defaultabc123smAudioAC == 1;
 
       radioButtonUseExistingAudio.Checked = Settings.Instance.AudioClips.UseExistingAudio;
       groupBoxCheckGenerateSnapshots.Checked = Settings.Instance.Snapshots.Enabled;

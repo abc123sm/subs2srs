@@ -1,4 +1,4 @@
-﻿namespace subs2srs
+namespace subs2srs
 {
   partial class FormMain
   {
@@ -92,6 +92,7 @@
             this.radioButtonExtractAudioFromVideo = new System.Windows.Forms.RadioButton();
             this.textBoxAudioFile = new System.Windows.Forms.TextBox();
             this.checkBoxNormalizeAudio = new System.Windows.Forms.CheckBox();
+            this.checkBoxMonoAudio = new System.Windows.Forms.CheckBox();
             this.groupBoxCheckPadTimings = new subs2srs.GroupBoxCheck();
             this.labelPadStart = new System.Windows.Forms.Label();
             this.labelAudioPadEndUnits = new System.Windows.Forms.Label();
@@ -1006,6 +1007,7 @@
             this.groupBoxCheckGenerateAudioClips.Checked = false;
             this.groupBoxCheckGenerateAudioClips.Controls.Add(this.groupBoxAudioClipSource);
             this.groupBoxCheckGenerateAudioClips.Controls.Add(this.checkBoxNormalizeAudio);
+            this.groupBoxCheckGenerateAudioClips.Controls.Add(this.checkBoxMonoAudio);
             this.groupBoxCheckGenerateAudioClips.Controls.Add(this.groupBoxCheckPadTimings);
             this.groupBoxCheckGenerateAudioClips.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBoxCheckGenerateAudioClips.Location = new System.Drawing.Point(7, 251);
@@ -1124,14 +1126,23 @@
             // checkBoxNormalizeAudio
             // 
             this.checkBoxNormalizeAudio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxNormalizeAudio.AutoSize = true;
-            this.checkBoxNormalizeAudio.Location = new System.Drawing.Point(503, 30);
+            this.checkBoxNormalizeAudio.Location = new System.Drawing.Point(503, 15);
             this.checkBoxNormalizeAudio.Name = "checkBoxNormalizeAudio";
-            this.checkBoxNormalizeAudio.Size = new System.Drawing.Size(78, 28);
+            this.checkBoxNormalizeAudio.Size = new System.Drawing.Size(80, 28);
             this.checkBoxNormalizeAudio.TabIndex = 2;
-            this.checkBoxNormalizeAudio.Text = "Normalize\r\nAudio";
+            this.checkBoxNormalizeAudio.Text = "响度均衡";
             this.toolTip1.SetToolTip(this.checkBoxNormalizeAudio, resources.GetString("checkBoxNormalizeAudio.ToolTip"));
             this.checkBoxNormalizeAudio.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxMonoAudio
+            // 
+            this.checkBoxMonoAudio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxMonoAudio.Location = new System.Drawing.Point(503, 40);
+            this.checkBoxMonoAudio.Name = "checkBoxMonoAudio";
+            this.checkBoxMonoAudio.Size = new System.Drawing.Size(80, 28);
+            this.checkBoxMonoAudio.TabIndex = 3;
+            this.checkBoxMonoAudio.Text = "单声道";
+            this.checkBoxMonoAudio.UseVisualStyleBackColor = true;
             // 
             // groupBoxCheckPadTimings
             // 
@@ -2165,6 +2176,7 @@
     private System.Windows.Forms.Label labelRequiredOutput;
     private System.Windows.Forms.ToolStripMenuItem preferencesToolStripMenuItem;
     private System.Windows.Forms.CheckBox checkBoxNormalizeAudio;
+    private System.Windows.Forms.CheckBox checkBoxMonoAudio;
     private System.Windows.Forms.ToolStripMenuItem subsReTimerToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem mKVExtractToolToolStripMenuItem;
   }
